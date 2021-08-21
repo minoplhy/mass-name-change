@@ -1,0 +1,20 @@
+name: "Mass Name Changes"
+description: ""
+branding:
+  icon: 'activity'
+  color: 'green'
+
+inputs:
+  action_location:
+    description: "Action Location Must be in .py"
+    required: true
+  Repo:
+    description: "Repo"
+    required: true  
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.action_location }}
+    - ${{ inputs.repo }}
